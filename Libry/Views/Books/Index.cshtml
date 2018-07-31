@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Libry.Models.Book>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Books</h2>
+
+<table class="table table-hover table-bordered" id="books">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Genre</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td>
+                    <a href="/books/details/@book.BookId">
+                    @book.Title
+                        </a>
+                </td>
+                <td>
+                    @book.Genre
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section scripts 
+{
+    <script>
+
+    $(document).ready(function() {
+        $('#books').DataTable();
+    
+    })
+    </script>
+    
+}

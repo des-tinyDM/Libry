@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Libry.Models.BookAuthor>
+    
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>
+    @Model.FirstOrDefault().Author.FirstName @Model.FirstOrDefault().Author.LastName
+</h2>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Book Name</th>
+            <th>Genre</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var author in Model)
+        {
+            <tr>
+                <td>
+                <a href="/books/details/@author.Book.BookId">@author.Book.Title</a>
+
+                </td>
+                <td>@author.Book.Genre</td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+

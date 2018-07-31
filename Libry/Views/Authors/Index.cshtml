@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Libry.Models.Author>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Authors</h2>
+
+<table class="table table-bordered table-hover" id="authors">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var author in Model)
+        {
+            <tr>
+                <td>
+                    <a href="/authors/details/@author.AuthorId">
+                        @author.FirstName @author.LastName
+                    </a>
+                </td>
+                <td>@author.Email</td>
+                <td>@author.Phone</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section scripts
+{
+    <script>
+
+    $(document).ready(function() {
+        $('#authors').DataTable();
+
+    })
+    </script>
+
+}

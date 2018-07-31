@@ -1,0 +1,21 @@
+﻿<img src="https://kaedeedeecom.files.wordpress.com/2016/03/12785479-book-shelf-banner-funny-cartoon-stock-vector-library-book-books2.jpg" class="navbar-header-img" />
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("Libr", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Books", "Index", "Books")</li>
+                <li>@Html.ActionLink("Authors", "Index", "Authors")</li>
+                <li>@Html.ActionLink("Other Things", "Contact", "Home")</li>
+            </ul>
+            @Html.Partial("_LoginPartial")
+        </div>
+    </div>
+</div>

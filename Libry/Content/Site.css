@@ -22,3 +22,9 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.navbar-header-img {
+    height:20vh;
+    max-height:40vh;
+    width:100vw;
+}
