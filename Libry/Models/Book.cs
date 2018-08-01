@@ -17,5 +17,6 @@ namespace Libry.Models
 
         [StringLength(500)]
         public string Genre { get; set; }
+
     }
 }
